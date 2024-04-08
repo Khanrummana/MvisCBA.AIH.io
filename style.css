@@ -1,75 +1,79 @@
 body,
 html {
-  height: 100%;
+  height: 90%;
   margin: 0;
   font-family: 'Arial', sans-serif;
   background-color: #fff; /* White background for the body */
   color: #333; /* Dark text color for contrast */
+  display: flex;
+  flex-direction: column;
 }
 
 .main-header {
-  background-color:#333; /* Light gray for the header */
+  background-color: #333; /* Light gray for the header */
   color: #0056b3; /* Blue for the header text */
-  padding: 40px 0; /* Increased padding for a larger header */
+  padding: 15px 0; /* Reduced padding for a smaller header */
   text-align: center; /* Center align the header content */
 }
 
 .container {
-  width: 90%; /* Slightly increased width */
+  width: 65%; /* Slightly increased width */
   margin: 0 auto;
-  padding: 20px; /* Padding to prevent content from touching the sides */
+  padding: 10px; /* Reduced padding to prevent content from touching the sides */
+  flex-grow: 1; /* Allow the container to grow and fill available space */
+  overflow: auto; /* Allows scrolling within the container if content exceeds its height */
 }
 
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center everything in the header */
-  flex-direction: column; /* Stack logo and title */
+  justify-content: space-between; /* Align logo to the right and title to the left */
+  flex-direction: row; /* Horizontal alignment */
 }
 
 .logo {
-  max-width: 150px; /* Adjust logo size */
-  margin-bottom: 10px; /* Space between logo and title */
+  max-width: 120px; /* Adjust logo size */
+  margin-right: auto; /* Push the logo to the right */
 }
 
 .title-container h1 {
-  font-size: 3rem; /* Larger title size */
+  font-size: 2.5rem; /* Reduced title size */
   color: #0056b3; /* Blue color for the title */
 }
 
 .subtitle {
-  font-size: 1.5rem; /* Increased subtitle size */
+  font-size: 1.2rem; /* Reduced subtitle size */
   color: #fff; /* Subtitle in gray */
 }
 
 .dataset-section {
   background-color: #f8f9fa; /* Light gray background for the dataset section */
-  padding: 40px 0; /* More padding for vertical space */
-  margin-top: 30px; /* Separate header from dataset section */
+  padding: 10px 0; /* Reduced padding for vertical space */
+  margin-top: 8px; /* Reduced margin to separate header from dataset section */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .dataset-header h2 {
   text-align: center;
   color: #333; /* Dark gray text for contrast */
-  margin-bottom: 2rem; /* More space above datasets */
+  margin-bottom: 1rem; /* Reduced space above datasets */
 }
 
 .dataset-container {
   background-color: #fff; /* White background for datasets */
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 5px; /* Soft rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the container */
-  max-width: 800px; /* Width of the dataset container */
-  margin: 20px auto; /* Center dataset container with vertical space */
+  max-width: 700px; /* Width of the dataset container */
+  margin: 10px auto; /* Center dataset container with reduced vertical space */
 }
 
 .dataset-info {
   display: flex;
   justify-content: space-between;
   align-items: center; /* Align items vertically */
-  margin-bottom: 1rem;
-  padding-bottom: 1rem; /* Space below each dataset row */
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem; /* Reduced space below each dataset row */
   border-bottom: 1px solid #e9ecef; /* Separator line for each dataset */
 }
 
@@ -86,7 +90,7 @@ html {
   background-color: #0056b3; /* Blue for the button */
   color: #fff;
   border: none;
-  padding: 12px 25px; /* More padding for a bigger button */
+  padding: 12px 20px; /* More padding for a bigger button */
   cursor: pointer;
   display: inline-block; /* Allow width to fit content */
   border-radius: 5px; /* Rounded corners for button */
@@ -96,14 +100,37 @@ html {
 
 .select-button:hover {
   background-color: #003d82; /* Darker blue on hover */
-  text-align: center;
 }
+
+.dropdown {
+  background-color: #0056b3; /* Blue background for the dropdown */
+  color: #fff; /* White text color */
+  width: 100%; /* Full width of the container */
+  padding: 8px; /* Some padding for better appearance */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  font-family: 'Arial', sans-serif; /* Match the font with the rest of the page */
+  font-size: 1rem; /* Standard font size */
+  margin-bottom: 1rem; /* Space below the dropdown */
+}
+
+.dropdown option {
+  background-color: #fff; /* White background for options */
+  color: #333; /* Dark text color for options */
+}
+
+.open-button-container {
+  text-align: center; /* Center the Open button */
+  margin-top: 10px; /* Add some space above the button */
+   margin-bottom: 20px; /* Add some space below the button */
+}
+
 
 footer {
   background-color: #343a40; /* Darker gray, almost black */
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -112,26 +139,6 @@ footer {
 footer a {
   color: #adb5bd; /* Light gray for footer links */
   text-decoration: none;
-  margin: 0 15px;
-}
-
-footer a:hover {
-  color: #fff; /* White on hover for contrast */
-}
-
-@media (max-width: 768px) {
-  .header-container,
-  .dataset-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .dataset-info {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .select-button {
-    width: 100%; /* Full width button on mobile */
-  }
+  margin: 3 10px;
+  padding: 1rem;
 }
